@@ -24,10 +24,10 @@ There are two types of coupling
 
     Remark : By using Polymorphysim and Encapsulation
 
-    Important : create single class which manage interface and implemented class
+    Important : create single class which manage interfaces and implemented class
 
     very important class
-    public class MentorAccount{ // this class as a bridge connecting interface and other implemented classes
+    public class MentorAccount{ // this class as a bridge connecting interfaces and other implemented classes
 
         Mentor mentor;
 
@@ -89,8 +89,8 @@ There are two types of coupling
     external authority : mean we give Spring to create object, which means we gave authority to Spring
 
     Spring BeanFactory:
-                - coming frame interface --> org.springframework.beans.factory.BeanFactory interface
-                - root interface for accessing spring bean container
+                - coming frame interfaces --> org.springframework.beans.factory.BeanFactory interfaces
+                - root interfaces for accessing spring bean container
                 - it provides basic functionality
                 - some implementation class are: (Important)
                         - XmlBeanFactory
@@ -98,7 +98,7 @@ There are two types of coupling
                         - SimpleJndiBeanFactory
 
     ApplicationContext:
-                - coming frame interface --> org.springframework.beans.factory.BeanFactory interface
+                - coming frame interfaces --> org.springframework.beans.factory.BeanFactory interfaces
                 - Implementation classes are:
                         - File
                         -
@@ -139,4 +139,51 @@ There are two types of coupling
         </dependencies>
 ----------------------------------------------------------------------
 
+
+    Important : Configuration
+
+    there are 3 Configuration :
+        - XML configuration file
+        - Java Annotations
+        - Java Source Code
+
+        currently modern way is Java Source Code
+
+
+    1. XML Configuration file
+
+
+
+******************Resources file in Maven project*************
+    resources file is place
+        - add config.xml
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <beans xmlns="http://www.springframework.org/schema/beans"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+                <bean id = "fullTimeMentor" class="services.FullTimeMentor"/>
+
+            </beans>
+
+
+       ----------------------------------------------------------------------
+            <bean id = "fullTimeMentor" class="services.FullTimeMentor"/>
+                        object name             object template
+
+
+------------------------------------------------------------------------
+
+    after config file, next we create container
+
+    create new java class under java folder
+        - CybertekApp.jar
+        BeanFactory container = new ClassPathXmlApplicationContext("config.xml");
+
+        this is class that we can connect Configuration and Container
+
+    Syntax:
+        BeanFactory bean = new ClassPathXML
 
