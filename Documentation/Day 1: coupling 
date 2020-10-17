@@ -20,7 +20,25 @@ There are two types of coupling
                           maintainence. it highly causing compile error and bug.
 
     Solution 1:
-    in Tightly Coupliing: by using Inteface, we can handle this
+    in Lossely Coupliing: by using Inteface, we can handle this
+
+    Remark : By using Polymorphysim and Encapsulation
+
+    Important : create single class which manage interface and implemented class
+
+    public class MentorAccount{ // this class as a bridge connecting interface and other implemented classes
+
+        Mentor mentor;
+
+        public MentorAccount(Mentor mentor) {
+            this.mentor = mentor;
+        }
+
+        public void manageAccount(){
+            this.mentor.createAccount();
+        }
+    }
+
 
 
     Solution 2:
