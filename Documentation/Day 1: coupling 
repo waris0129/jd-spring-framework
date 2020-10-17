@@ -1,0 +1,30 @@
+day 1 : coupliing
+
+this is very important concept in Java spring framework
+
+There are two types of coupling
+    loose
+    tight
+
+    we are prefer loosely coupling
+
+    tight coupling is bad practice
+
+    Questions: what if your client asks to add one more object.
+
+    in Tightly Coupling : if client rquests adding one more objecct/cusotmer in app, as a developer you are going
+                          to add new class, new method, new constructor, and update other dependecies module, in
+                          order to app can pick up this new object/customer.
+
+                          this is a bad practice, becuase it would take so many time spending on frame work
+                          maintainence. it highly causing compile error and bug.
+
+    Solution 1:
+    in Tightly Coupliing: by using Inteface, we can handle this
+
+
+    Solution 2:
+    In Loosing coupling : it would help us to solve our problem
+
+
+
