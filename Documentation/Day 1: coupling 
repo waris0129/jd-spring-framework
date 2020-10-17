@@ -12,20 +12,21 @@ There are two types of coupling
 
     Questions: what if your client asks to add one more object.
 
-    in Tightly Coupling : if client rquests adding one more objecct/cusotmer in app, as a developer you are going
+    in Tightly Coupled : if client rquests adding one more objecct/cusotmer in app, as a developer you are going
                           to add new class, new method, new constructor, and update other dependecies module, in
                           order to app can pick up this new object/customer.
 
                           this is a bad practice, becuase it would take so many time spending on frame work
                           maintainence. it highly causing compile error and bug.
 
-    Solution 1:
+    Solution 1: Lossley Coupled
     in Lossely Coupliing: by using Inteface, we can handle this
 
     Remark : By using Polymorphysim and Encapsulation
 
     Important : create single class which manage interface and implemented class
 
+    very important class
     public class MentorAccount{ // this class as a bridge connecting interface and other implemented classes
 
         Mentor mentor;
@@ -41,8 +42,101 @@ There are two types of coupling
 
 
 
-    Solution 2:
-    In Loosing coupling : it would help us to solve our problem
+***********************************Important Concept IOC-- Loosely Coupled********************
 
+    IOC : Inversion of Control
+        - helps to transfer object to container or framework
+        - framework control create object (earlier we control to create object, but Spring does it for us)
+
+        is a principle by which the control of object or portions of a program is transferred to a container or framework.
+
+    Advantage :
+        - Decoupling the execution of  task from its implementation
+        - Making it easier to switch between different implementations
+        - Creat ease in testing program by isilating a component or mocking it dependencies
+
+--------------------------Loosely Coupled way IOC ---------------------------------------------------------------------
+    Here is Spring flow to creaste object and use it:
+                    POJO = application classes
+                            |
+                            |
+  ----->                    |
+ Configuration      Spring Container
+                             |
+                             |
+                             |
+                   Completely configured
+                   application system
+                   ready to use
+ -----------------------------------------------------------------------------------------------
+
+   Terminology:
+    Beans : POJO Class (template)
+
+    Sprint Bean :
+                  - a simple Java Object
+                  - Object/Bean created and managed by Spring Container
+                  - Spring Beans are created from normal Java classes
+
+    Container:
+                - connecting beans together
+                - create object
+                - manage object
+                - destroy object
+
+    IoC container : external authority
+
+    external authority : mean we give Spring to create object, which means we gave authority to Spring
+
+    Spring BeanFactory:
+                - coming frame interface --> org.springframework.beans.factory.BeanFactory interface
+                - root interface for accessing spring bean container
+                - it provides basic functionality
+                - some implementation class are: (Important)
+                        - XmlBeanFactory
+                        - DefaultListableBeanFactory
+                        - SimpleJndiBeanFactory
+
+    ApplicationContext:
+                - coming frame interface --> org.springframework.beans.factory.BeanFactory interface
+                - Implementation classes are:
+                        - File
+                        -
+                        -
+
+    Rules to define Bean :
+            - Services, DAO, Repos, should be a bean
+            - POJO, DTOs no need to be a bean
+
+    remark: Services -> we put business logic
+
+    Remark: POJO is a big concept
+
+
+
+------------------------- add dependency into maven project -----------
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>5.2.8.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>5.2.8.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>5.2.8.RELEASE</version>
+            </dependency>
+        </dependencies>
+----------------------------------------------------------------------
 
 
