@@ -2,17 +2,17 @@ day 1 : coupliing
 
 this is very important concept in Java spring framework
 
-There are two types of coupling
+There are two types of coupled
     loose
     tight
 
-    we are prefer loosely coupling
+    we are prefer loosely coupled
 
     tight coupling is bad practice
 
     Questions: what if your client asks to add one more object.
 
-    in Tightly Coupled : if client rquests adding one more objecct/cusotmer in app, as a developer you are going
+    in Tightly Coupled : if client requests adding one more object/customer in Project, as a developer you are going
                           to add new class, new method, new constructor, and update other dependecies module, in
                           order to app can pick up this new object/customer.
 
@@ -20,7 +20,7 @@ There are two types of coupling
                           maintainence. it highly causing compile error and bug.
 
     Solution 1: Lossley Coupled
-    in Lossely Coupliing: by using Inteface, we can handle this
+    in Lossely Coupled: by using Inteface, we can handle this
 
     Remark : By using Polymorphysim and Encapsulation
 
@@ -42,7 +42,7 @@ There are two types of coupling
 
 
 
-***********************************Important Concept IOC-- Loosely Coupled********************
+***********************************Important Concept IoC-- Loosely Coupled********************
 
     IOC : Inversion of Control
         - helps to transfer object to container or framework
@@ -53,10 +53,10 @@ There are two types of coupling
     Advantage :
         - Decoupling the execution of  task from its implementation
         - Making it easier to switch between different implementations
-        - Creat ease in testing program by isilating a component or mocking it dependencies
+        - Creat ease in testing program by isolating a component or mocking it dependencies
 
---------------------------Loosely Coupled way IOC ---------------------------------------------------------------------
-    Here is Spring flow to creaste object and use it:
+--------------------------Loosely Coupled way IoC ---------------------------------------------------------------------
+    Here is Spring flow to create object and use it:
                     POJO = application classes
                             |
                             |
