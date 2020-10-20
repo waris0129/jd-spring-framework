@@ -1,6 +1,6 @@
 package implementation;
 
-public interfaces Mentor {
+public interface Mentor {
 
     void createAccount();
 
