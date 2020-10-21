@@ -55,7 +55,7 @@ Day 2: Constructor Injection
     if we did not create bean or constructor for object
     we would receive exception: NullPointerException
 
-    public class Java implements com.cybertek.interfaces.Course {
+    public class Java implements com.Course {
         OfficeHours officeHours;
 
         @Override
@@ -109,6 +109,7 @@ Day 2: Constructor Injection
 
 
     *************** Spring Bean Scopes and LifeCycle *************
+        tag : scope
 
         - how long does the bean live
         - how many instace are created
@@ -123,8 +124,26 @@ Day 2: Constructor Injection
 
             remark : default scope is Singleton
 
+                  <bean id="java" class="com.Java" scope="prototype"/>
+
+                  <bean id = "selenium" class="com.Selenium"/>
+
+               most importantly there there are 3 beans
+                        - Selenium --> selenium1 and selenium2
+                        - Java --> java1
+                        - Java --> java2
+
+    *************** Init and Destroy methods *************
+
+    tag : init-method
+                - Access modifier
+                - Return type
+                - Method name
+                - Argument
 
 
+        in order to initiate Destroy() method, we have to close container in first
+        in that we can shut down all beans
 
 
 
