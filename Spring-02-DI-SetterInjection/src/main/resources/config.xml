@@ -4,12 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="java" class="com.cybertek.servcies.Java">
-        <constructor-arg ref="officeHours"/>
+    <bean id="java" class="com.cybertek.services.Java">
+        <property name="officeHours" ref="officeHours"/>
     </bean>
 
-    <bean id = "selenium" class="com.cybertek.servcies.Selenium"/>
+    <bean id = "selenium" class="com.cybertek.services.Selenium">
+        <property name="extraSessions" ref="officeHours"/>
+    </bean>
 
-    <bean id="officeHours" class="com.cybertek.servcies.OfficeHours"/>
+
+    <bean id="officeHours" class="com.cybertek.services.OfficeHours"/>
 
 </beans>

@@ -1,0 +1,119 @@
+Day 2: Constructor Injection
+
+    review : Spring IoC : Inversion of Control
+                        - trasnfer object very conveniently
+                        - no worry about object creation
+                        - gave create object responsibility to framework
+
+    Coupling subject :
+                - tightly coupled : object creation is hightly replying on dependencies
+                - lossly coupled : object creation is less relying on dependencies
+
+
+    format structure :
+        Pojo application class --> configuration --> spring container --> complete configured
+
+
+
+    types of spring Container
+        there are twp types:
+            - BeanFactory interface
+            - ApplicationContext interface
+
+
+    each interface have own implementation methods.
+
+
+    Spring Bean is Java Object.
+    Spring bean is an object created and managed by Container
+
+
+    Configuration:
+        - XML Configuration
+        - Java Annotations
+        - Java Source Code (mian gaol)
+
+
+    XML Configuration :
+        <bean id="objectName" class="objectClassPath" />
+        Attribute:
+        id and class are Attribute for bean.
+
+    Loading the spring configuraton file
+    ApplicationContext container = new ClassPathXMLAppliationContext("config.xml");
+
+    Mentor mentor = container.getBean("objectName", Mentor.class);
+
+    mentor.doSomething(); // implementation--> abstract method
+
+ *********************************************************************************************************
+
+    Constructor Injection
+
+    for example
+
+    if we did not create bean or constructor for object
+    we would receive exception: NullPointerException
+
+    public class Java implements Course {
+        OfficeHours officeHours;
+
+        @Override
+        public void getTeachingHours() {
+            System.out.println("Weekly Teaching Hours : "+ 20 + officeHours.getHours());
+        }
+    }
+
+    currently OfficeHours is class coming from outside class,
+    it become a dependency class for Java Class
+
+    ---------------- inject object ----------
+
+    how to inject ?
+
+    Inject types:
+        - constructor Injection  : argument for the constructor
+        - Setter Injection  : argument for the setter
+        - Field Injection : value for the field
+
+    remark: we currently inject OfficeHours Object into Java Class.
+
+    *************** Constructor Injection *************
+            <bean id="java" class="com.cybertek.servcies.Java">
+                <constructor-arg ref="officeHours"/>
+            </bean>
+
+    syntax:
+
+        <constructor-arg ref="objectName"/>
+
+        behind scense
+
+        OfficeHours officehours = new OfficeHours();
+        Java java = new Java(officeHours);
+
+    // Every important : we only use interface and abstract method in class level
+
+    ExtraSessions extraSessions; // this is a denpendency class, it must inject object
+
+    public Java(ExtraSessions extraSessions) { // Important , we implement Interface and abstract method
+        this.extraSessions= extraSessions;
+    }
+
+    *************** Setter Injection *************
+
+    <property name = "" ref = ""/>
+
+    we can use Lombak as well
+
+
+
+
+
+
+
+
+
+
+
+
