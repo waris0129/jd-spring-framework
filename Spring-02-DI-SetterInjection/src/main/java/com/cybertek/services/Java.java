@@ -7,10 +7,11 @@ public class Java implements Course {
 
     private OfficeHours officeHours;
 
-    public OfficeHours getOfficeHours() {
+    public OfficeHours getOfficeHours() {// getter constructor
         return officeHours;
     }
 
+    // setter constructor
     public void setOfficeHours(OfficeHours officeHours){ // spring parse setOfficeHours as set + officeHours
         this.officeHours = officeHours;
     }

@@ -55,7 +55,7 @@ Day 2: Constructor Injection
     if we did not create bean or constructor for object
     we would receive exception: NullPointerException
 
-    public class Java implements Course {
+    public class Java implements com.cybertek.interfaces.Course {
         OfficeHours officeHours;
 
         @Override
@@ -108,6 +108,20 @@ Day 2: Constructor Injection
 
 
 
+    *************** Spring Bean Scopes and LifeCycle *************
+
+        - how long does the bean live
+        - how many instace are created
+        -
+
+        spring bean scopes
+            - singleton : (sharing same object) create a single shared instance of the bean
+            - prototype : (different object) creates a new bean instance for each container request
+            - request   :
+            - session
+            - global-session
+
+            remark : default scope is Singleton
 
 
 
