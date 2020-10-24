@@ -1,0 +1,63 @@
+Day 3 :  JAVA Annotation
+
+    review :
+            IoC : Inversion of Control
+
+            Dependency Injection:
+                        - Inject object into other objects or "dependencies"
+
+            how to inject dependency?
+                - Constructor Injection:  <constructor-arg  ref="officeHours" \>
+                - Setter Injection :      <property name="setmethodName" ref="officeHours" \>
+                - Field Injection :       <
+
+
+            Bean Scope : (default value with Singleton)
+                      - Singleton : only one instance through cycle, sharing same value
+                                < scope = "Singleton" \>
+                      - Prototype : many instance through cycle, unique value
+                                < scope = "Prototype" \>
+
+            Bean LifeCycle :
+                    - initMethod : Access modifier can be anything
+                    - destroyMethod : Access modifier can be anything
+                            - if the scope is Prototype, Destroy Method can not be activated
+
+
+            Container started --> Bean initiated --> Depedency INject --> Internal Spring Processing
+                --> Your Custom Init method
+                --> Bean is ready for use
+
+                --> Container is shotdown
+                --> your cusom Destroy Method
+                STOP
+
+ *********************************JAVA Annotations **********************************
+
+    Spring Configuration :
+
+                    - XML Configuration
+                    - Java Annotations
+                    - Java Source Code (main gaol)
+
+
+    *************** Enable Component Scanning *******Ready to scan class*************
+
+    < Context: component-scan base-package = "className" />
+
+
+    **************** Annotations ************************
+
+                @Component (It is used to mark a class from which a bean will be created)
+
+    @Controller     @Service        @Repository
+
+
+
+    Importnat:
+        Default Bean IDs
+
+        when springs creats a Bean Definition from @Component annotation, it will create small letter of object
+
+        if class name is Java, default object name is lower case "java"
+
