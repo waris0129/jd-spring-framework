@@ -3,23 +3,20 @@ package com.cybertek.services;
 import com.cybertek.interfaces.Course;
 import com.cybertek.interfaces.ExtraSessions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Java implements Course {
 
-    @Autowired // Feild injection
+    @Autowired
+    @Qualifier("officeHours")
     private ExtraSessions extraSessions;
 
-//    @Autowired  // anotation used for Constructor injection : OfficeHour object inject into Java class
-//    public Java(OfficeHours officeHours) {
-//        this.officeHours = officeHours;
+//    public Java (@Qualifier("officeHours") ExtraSessions extraSessions){
+//        this.extraSessions = extraSessions;
 //    }
 
-//    @Autowired // annotation used for Setter Injection
-//    public void setOfficeHours(OfficeHours officeHours) {
-//        this.officeHours = officeHours;
-//    }
 
     @Override
     public void getTeachingHours() {

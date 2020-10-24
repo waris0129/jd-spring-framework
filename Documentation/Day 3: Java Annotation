@@ -61,3 +61,70 @@ Day 3 :  JAVA Annotation
 
         if class name is Java, default object name is lower case "java"
 
+
+    *********** Autowired ****** object injection *********
+        1. Constructor Injection
+        2. Setter Injection
+        3. field Injection
+
+        @Autowired = <constructor-arg ref="objectName" > // Constructor Injection
+
+        @Autowired = <property name="methodName" ref="objectName"> // Setter Injection
+
+        @Autowired = private OfficeHours officeHours; // Field Injection
+
+    @Autowired  is replaced previous xml syntax <constructor-arg ref="objectName"/>
+
+    Constructor-Injection:
+    remark: if there is only one constructor in class, we do not need to provide @Autowired annotation
+
+    but if there is multiple construcotr, we must given one @Autowired in order to Container to
+    recognize it.
+
+
+
+    ********* Interface implement two class **************
+
+    @Qualifer :
+        - helps to pick implementd class from multiple sub class
+
+    in interface how Spring pick class
+
+    when Interface implement two class at same time
+
+    ExtraSessions is interface
+
+    1)    public class MockInterviewHours implements ExtraSessions { }
+    2)    public class OfficeHours implements ExtraSessions { }
+
+
+    way 1 : constructor injecgtion
+        public Java (@Qualifier("officeHours") ExtraSessions extraSessions){
+            this.extraSessions = extraSessions;
+        }
+
+    way 2 : filed injection
+            @Autowired
+            @Qualifier("officeHours")
+            private ExtraSessions extraSessions;
+
+
+
+    in Way 1 ConstructorInjection:  we only need one Annotation @Qualifier within argument
+    in Way 2 FieldInjection : we need two Annotation @Autowired and @Qualifier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,10 +4,9 @@ import com.cybertek.interfaces.ExtraSessions;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OfficeHours implements ExtraSessions {
-
+public class MockInterviewHours implements ExtraSessions {
     @Override
     public int getHours() {
-        return 10;
+        return 6;
     }
 }
