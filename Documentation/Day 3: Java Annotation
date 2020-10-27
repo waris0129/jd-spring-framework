@@ -43,7 +43,7 @@ Day 3 :  JAVA Annotation
 
     *************** Enable Component Scanning *******Ready to scan class*************
 
-    < Context: component-scan base-package = "className" />
+    < Context: component-scan base-package = "packageName" />
 
     @Component : it defined bean for us
 
@@ -138,10 +138,84 @@ Day 3 :  JAVA Annotation
 
 
 
+****Very Important******************* Java Configuration *********@Configuration*********Java Code*************************
+
+    Object Injections :
+                        - Constructor Injection
+                        - Setter Injection
+                        - Filed Injection
+
+
+    Spring Configuration:
+                            - XML Configuration :
+                                    1) Constructor Injection : <constructor-arg ref="className" />
+                                    2) Setter Injection: <parameter name="methodName" ref="className" />
+
+                            - JAVA Annotation :
+                                    xml insert syntax : < Context: component-scan base-package = "packageName" />
+
+                                    @Component : Spring boot recognize the class is agreed to create bean
+
+                                    @Autowired
+                                            - Constructor Injection
+                                            - Setter Injection
+                                            - Field Injection
+                                    @Autowired replaced previous xml syntax to annotation used in class and method level
+
+                                    @Qualifer
+                                        if there is two class implement same interface, we need @Qualifier to indicate which class
+                                        we going to use for creating object
+
+
+                                           -  way 1 : constructor injecgtion
+                                                   public Java (@Qualifier("officeHours") ExtraSessions extraSessions){
+                                                       this.extraSessions = extraSessions;
+                                                   }
+
+                                           -  way 2 : filed injection
+                                                       @Autowired
+                                                       @Qualifier("officeHours")
+                                                       private ExtraSessions extraSessions;
+
+
+                                    @Value
+                                        - work with additional xml file
+                                        - insert config.xml file <context:property-placeholder location="application.properties"/>
+
+                            - Java Source Code :
+
+
+    Now we need to replace XML File with following two tags.
+
+     @Configuration -  replace config.xml file
+
+     @ComponentScan - <context:component-scan base-package="com.cybertek.services"/>
+
+    ------------------------------------------------------
+
+    1) syntax for config:
+        ApplicationContext context = new AnnotationConfigApplicationContext(CybertekAppConfig.class);
+
+            - remark :
+                - spring goes to CybertekAppConfig.class to create beans
+
+
+    2) give proper annotation to config class
+            @Configuration
+            @ComponentScan("com.cybertek")
+           public class CybertekAppConfig { }
 
 
 
+    ------------------@Bean_____________________
 
+   @Bean : create object for Spring boot, but it is method level
 
+   Very Important :
+        @Component  v.s  @Bean
 
+        @Component - class level
+        @Bean - method level
 
+   why we need @Bean?
+   An: sometimes we need third party module, in this case we need to create instance of third pary module.
