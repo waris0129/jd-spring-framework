@@ -1,0 +1,105 @@
+Day 4 :
+
+        Review :
+
+           Spring Configuration
+             Java Annotations
+
+        1) Create Container :
+                by using two interface :
+                    - BeanFactory
+                    - Application Context
+
+        2) Configuration :
+                - XML FILE
+                - JAVA ANNOTATION
+                - JAVA SOURCE CODE
+
+        Important Annotation:
+            - Component  : it is used to make creating bean
+                    types: Controller, Service , Repository
+            - Component-Scan
+
+        remark: Default Bean IDs
+            class name ----> default bean id
+              Java  -----> java
+
+
+        3) Spring Dependency Injection with Annotation:
+            @Autowired : Injection OfficeHours into Java class
+
+            remark: if there is only one constructor, we don't need
+            to provide annotation.
+
+            Field Injection
+
+            @Qualifier : if one interface implemented multiple classes
+            we can use the annotation to recognize certain class.
+
+            @Value : inject value into fields
+
+            @value("value") : direct pass value
+            @Value("${variable}") : pass value from file
+            @Value("${days}") : pass value as array
+
+
+ ********************* JAVA Code *****************************
+
+        - @Configuration : annotated class to configurate
+        - @Component-Scan(basePackage="packageName")
+        - @PropertySource("classPath:application.properties")
+
+        - AnnotationConfigApplicationContext class
+
+            new AnnotationConfigApplicationContext(CybertekConfigApp.class);
+
+        - @Bean : used for third party dependencies.
+
+       - @PostConstruct - init method
+
+       - @PreDestroy - destroy method
+
+
+
+        Remark :
+
+        Method Level and Class Level Annotation
+
+        @Bean is METHOD LEVEL annotation to create object
+        @Component is Class Level to create object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
