@@ -74,6 +74,37 @@ Day 4 :
 
 
 
+***************************Spring Booth**************************
+
+        MVNW : maven wrapper : for windows
+
+        MWNW.CMD : for mac
+
+       Annotation:
+
+        @SpringBootApplication : replace following three annotation
+            @Configuration
+            @ComponentScan
+            @EnableAutoConfiguration
+
+        it will scan com.sybertek
+
+        so we must orginize Runner class top package com.cybertek
+
+
+
+     ************* Container ****************
+
+     public static void main(String[] args) {
+     		SpringApplication.run(Spring07SpringBootDemoApplication.class, args);
+     	}
+
+     the     SpringApplication.run(Spring07SpringBootDemoApplication.class, args);
+     is already create container for us.
+
+
+
+
 
 
 
