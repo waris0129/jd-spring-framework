@@ -34,7 +34,7 @@ public class Calculator {
 
         }
 
-        return "Total cost for carpet is $"+cost.to+".";
+        return "Total cost for carpet is $"+cost+".";
 
     }
 
