@@ -1,0 +1,51 @@
+// Maps store Map.Entry objects, or make them accessible via the entrySet method ---
+ // a map, in general, stores (key,value) pairs in objects that belong to a class that implements this interface.
+ // //Each Entry object supports getKey() and getValue methods for retrieving these.
+ // Create a hash map
+ Map<String,Double> hm = new HashMap();
+ // Put elements to the map
+ hm.put("Zara", new Double(3434.34));
+ hm.put("Mahnaz", new Double(123.22));
+ hm.put("Ayan", new Double(1378.00));
+ hm.put("Daisy", new Double(99.22));
+ hm.put("Qadir", new Double(-19.08));
+ // Get a set of the entries
+ Set set = hm.entrySet();
+ // Get an iterator
+ Iterator i = set.iterator();
+ // Display elements
+ while(i.hasNext()) {
+     Map.Entry me = (Map.Entry)i.next();
+     System.out.print(me.getKey() + ": ");
+     System.out.println(me.getValue());
+ }
+ System.out.println();
+ // Deposit 1000 into Zara's account
+ double balance = ((Double)hm.get("Zara")).doubleValue();
+ hm.put("Zara", new Double(balance + 1000));
+ System.out.println("Zara's new balance: " + hm.get("Zara"));
+
+
+ // Example from : package com.cyberteck.services.carpet;
+ public BigDecimal getSqFtPrice(City city) {
+
+         //entrySet() --> convert into stream
+
+
+         BigDecimal defaultValue = BigDecimal.ZERO;
+
+         // way one to stream Map
+         //sqPriceCity.entrySet().stream().filter(p->p.getKey().equals(city)).findFirst().get().getValue();
+
+
+         // way 2 to stream Map// Option way is perfer to use
+         /*  Prefer Stream method:
+             Second way to use Optional
+             because if there is exception, it would said "there is no value in object"
+          */
+         Optional<Map.Entry<City,BigDecimal>>obj=
+         sqPriceCity.entrySet().stream().filter(p->p.getKey()==city).findFirst();
+
+
+         return obj.isPresent() ? obj.get().getValue():defaultValue;
+     }
