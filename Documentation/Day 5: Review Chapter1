@@ -1,0 +1,90 @@
+Day 5 : Review Chapter
+
+        topic :
+
+        1 - IoC / DI
+        2 - HTML/CSS/BOOTSTRAP - template
+        3 - MVC (Object: java, python, c#)
+        4 - ORM (Object Relational Mapping: convert to DB)
+        5 - Security
+        6 - API
+        7 - Testing
+        8 - Deployment
+
+
+*********************************** Review ***********************************************
+
+    Concept : Loosly Coupled vs Tightly Coupled
+              as a Developer we use Loosly Coupled to manage our framework
+
+   I: What is IoC?
+        IoC: Inversion of Control , Control of Objects of a programe is transfered to framework.
+
+    Important concept about IoC:
+        3 way to create IoC?
+            1) PoJo : Java class and object
+            2) Configuration : provided by developer
+                        - XML
+                        - Java Annotation (XML(Component-Scan) + Annotation)
+                        - Java Code
+            3) Container -
+                        - BeanFactory
+                        - ApplicationContext
+
+
+
+   II: DI
+        Dependency Injection (Bean)
+
+        Bean : Java Object is created and managed by Container
+
+        DI: injecting objects into another objects of dependencies
+               - Constructor injection
+               - Setter injection
+               - Field injection
+        Bean Scopes:
+              - Singleton : only one bean/staticObject through out all lifetime
+              - Prototype : multiple beans/instanceObject through out all lifetime
+
+        BeanLifeCycle:
+              - Init method : @PostConstruct
+              - Pre Destroy : @PreDestroy
+
+
+
+    III: Sprint Boot
+
+        why do we use Sprint Boot?
+            Simple Answer: Convention over  Configuration
+            it means as a Developer I need to focus on design and create function, I should not
+            waste my time on Configuration.
+
+            Sprint Boot helps me to manage :
+                        - Version Control,
+                        - Deployment,
+                        - Dependency
+
+
+    IV: @SpringBootApplication :
+            enables --> @ComponentScan
+                        @Configuration
+                        @EnableAutoConfiguration
+                        @PropertySource
+
+    ---------------------------------------------------------------------------------------------
+              Remark:
+              Annotation: @Component, @Bean, @Component-Scan, @Configuration, @Autowired, @Value, @Qualifier,
+                          @PropertySource, @Post-Construct, @Pre-Destroy
+
+            - Container : Configuration class
+                Class (@Configuration, @ComponentScan, @Bean) +Annotation
+
+            Important:
+                @Component - Class level annotation to create object
+                @Bean - Method level annotation to create object
+    ---------------------------------------------------------------------------------------------
+
+
+
+
+
