@@ -46,3 +46,66 @@ Day 7 MVC
     @RequestMapping
         - handle methods of MVC and REST Controllers
 
+
+    ***********************RequestMethod •••••••••••••••••••••••••••••
+
+    Request Method
+        - GET
+        - POST
+        - PUT
+        - DELETE
+
+    call way:
+        -  method = RequestMethod.GET, value = "/ozzy"
+        - @GetMapping
+            - which is equal to method = RequestMethod.GET
+        - @PostMapping
+
+
+   -  @PathVariable
+            - localhost:8080/home/cybertek
+            cybertek is path variable
+            "home/{name}"
+            @PathVariable("name") String name
+
+  -  @RequestParam
+
+        http://localhost:8080/home/course?course=spring
+    @GetMapping("/home/course")
+        public String requestParamEx(@RequestParam("course") String course)
+
+  -  @RequestParam
+        @GetMapping(value = "/course")
+        public String requestParam2(@RequestParam(value = "course", required = false,defaultValue = "Cybertek") String name){
+
+
+
+
+
+  *********** Important Class LEVEL Annotation *****************
+
+  same implementation with different @RequestMapping("/mentor")
+
+  url: http://localhost:8080/mentor/show
+  @Controller
+  @RequestMapping("/mentor")
+  public class MentorController {
+
+      @GetMapping("/show")
+      public String showForm(){
+          return "home";
+      }
+
+  }
+
+    url: http://localhost:8080/student/show
+  @Controller
+  @RequestMapping("/student")
+  public class MentorController {
+
+      @GetMapping("/show")
+      public String showForm(){
+          return "home";
+      }
+
+  }
