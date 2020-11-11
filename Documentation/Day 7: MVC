@@ -1,0 +1,48 @@
+Day 7 MVC
+
+    MVC is Design Patternn
+
+
+    Spring MVC
+
+    MVC : Module View Controller
+
+    Framework for building web applications in JAVA
+
+    Based on MVC module view controller
+
+    Important WorkFlow: Big picture:
+
+    1. Front-Controller - DispatcherServlet : remark it is already been built by Spring dev team, we do not need to do it
+    2. Controller (Model - controlling data, sending to Front Controller)
+    3. View Template
+
+
+    ***********************Controller•••••••••••••••••••••••••••••
+
+    Controller :
+        it is a business logic
+        Handle the request
+        Store / retrieve data (db, webservice)
+        Place data in model
+
+
+    Model :
+            carrying data
+    View :
+            View templates
+                - JSP(jAVA SERVER pages)
+                - Thymeleaf (Most popular one in Market)
+                - Groovy
+                - FreeMarker
+                - Jade
+
+    ***********************Annotation•••••••••••••••••••••••••••••
+
+    @Controller
+        - indicates that the annotated class is a controller.
+        - it is a specialization of @Component and is autodetected through
+        classpath scanning.
+    @RequestMapping
+        - handle methods of MVC and REST Controllers
+
