@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- we need Binding to connect Model with HTML  -->
+<!-- we need Thymleaf to help to connect-->
+    <h1>Welcome to Student Page</h1>
+
+    <h2 th:text="${name}"></h2>
+    <h3 th:text="${course}"></h3>
+    <h3 th:text="${subject}"></h3>
+    <h3 th:text="${id}"></h3>
+    <h3 th:text="${number}"></h3>
+    <h3 th:text="${number.get(0)}"></h3>
+    <h3 th:text="${birthYear}"></h3>
+
+
+    <!-- Concatenation -->
+    <h2 th:text="${'Hello '+name }"></h2>
+
+
+    <!-- print Student object -->
+
+    <h2 th:text="${student.getFirstName()}"></h2>
+    <h2 th:text="${student.firstName}"></h2>
+
+
+
+    <!-- Link by Thymleaf-->
+
+    <a th:href="@{https://www.amazon.com}">Cybertek</a>
+
+
+</body>
+</html>

@@ -1,6 +1,69 @@
-Day 8
+Day 8 Spring Model
         MVC:
 
         1. Front-Controller : inbuild framework,
         2. Controller :
         3. View-Template
+
+
+        today topic : How to Carrying Data - Model -> also called Binding
+
+*********************** Spring Model ****************************
+
+    Interface : Model interface
+
+    addAttribute(Object attributevalue)
+
+    Map<string, Object>
+
+    we need to binding data
+
+
+
+    we need Binding to connect Model with HTML
+    we need Thymleaf to help to connect
+
+ *********************** thymeleaf ****************************
+
+   how to connect ?
+   using following tag in to html header
+
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    in Class :
+                 model.addAttribute("name","Waris");
+
+    in HTML file :
+                <h2 th:text="${name}"></h2>
+
+
+    th: tag
+
+            - th:text  --> display some something in html page
+                   - th:text= "${key}"
+
+            - th:href --> heyber link
+                Absulte url :
+                    <a th:href="@{https://cybertekschool.com}">Amazon</a>
+
+
+
+ *********************** model packge ****************************
+
+     model package : contain pojo class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
