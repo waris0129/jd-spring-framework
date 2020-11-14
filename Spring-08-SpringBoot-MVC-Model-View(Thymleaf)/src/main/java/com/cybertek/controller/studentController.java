@@ -34,13 +34,16 @@ public class studentController {
 
         // try some collection
 
-        List<Integer>number = new ArrayList<>();
-        number.add(1);
-        number.add(2);
-        number.add(3);
-        number.add(4);
-
-        model.addAttribute("number",number);
+        List<Integer>numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        model.addAttribute("numbers",numbers);
 
 
         // print your birthday

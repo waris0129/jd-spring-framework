@@ -14,8 +14,8 @@
     <h3 th:text="${course}"></h3>
     <h3 th:text="${subject}"></h3>
     <h3 th:text="${id}"></h3>
-    <h3 th:text="${number}"></h3>
-    <h3 th:text="${number.get(0)}"></h3>
+    <h3 th:text="${numbers}"></h3>
+    <h3 th:text="${numbers.get(0)}"></h3>
     <h3 th:text="${birthYear}"></h3>
 
 
@@ -32,7 +32,32 @@
 
     <!-- Link by Thymleaf-->
 
-    <a th:href="@{https://www.amazon.com}">Cybertek</a>
+    <a th:href="@{https://www.amazon.com}">Amazon</a>
+
+    <a th:href="@{/student/register}">Register</a>
+
+
+    <!-- adding parameter to link -->
+    <a th:href="@{/student/welcome(id=3)}">Link2</a>
+
+    <a th:href="@{/student/welcome(id=${student.id})}" >Link3</a>
+
+
+
+    <!--- Iteration -->
+
+    <url>
+        <li th:each="number : ${numbers}" th:text="${number}"></li>
+    </url>
+
+
+
+
+
+    <!-- fragment -->
+
+    <div th:replace="fragments/footer ::foter"></div>
+
 
 
 </body>

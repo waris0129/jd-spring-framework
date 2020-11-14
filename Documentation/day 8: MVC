@@ -39,13 +39,41 @@ Day 8 Spring Model
 
     th: tag
 
+        Text:
             - th:text  --> display some something in html page
                    - th:text= "${key}"
-
+        Link:
             - th:href --> heyber link
                 Absulte url :
                     <a th:href="@{https://cybertekschool.com}">Amazon</a>
 
+                <a th:href="@{/student/register}">Register</a>
+
+                adding parameter to link -->
+
+                <a th:href="@{/student/welcome(id=3)}">Link2</a>
+
+                <a th:href="@{/student/welcome(id=${student.id})}" >Link3</a>
+
+        Interation:
+            - th:each
+            <url>
+                    <li th:each="number : ${numbers}" th:text="${number}"></li>
+                </url>
+
+        Fragment:
+            - th:fragment
+
+            fragment.html
+            <div th:fragment="footer">
+                <!-- footer -->
+                <footer class="page-footer font-small blue fixed-bottom">
+                    <div class="footer-copyright text-center py-3">© 2020 Cybertek – All Rights Reserved:</div>
+                </footer>
+            </div>
+
+            welcom.html
+            <div th:replace="fragments/footer ::footer"></div>
 
 
  *********************** model packge ****************************
