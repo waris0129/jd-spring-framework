@@ -4,3 +4,29 @@ Day 9
 
     Form
 
+    th:object=""
+
+    object: command object
+
+    important :
+    we need empty contructor object at controller class
+    model.addAttribute("mentor", new Mentor());
+
+    th:field --> *
+
+    * means object mentor
+
+    <form th:object="${mentor}">
+                <label>First Name:</label>
+                <input type="text" id="firstName" th:field ="*{firstName}">
+
+
+
+    th:value="${theBatch}"
+        value is graped value from browser
+
+    <input type="radio" value="male" th:field="*{gender}">Male
+
+    <option th:each="theBatch :${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
+
+
