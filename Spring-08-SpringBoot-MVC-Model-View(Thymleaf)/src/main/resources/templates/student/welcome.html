@@ -8,56 +8,50 @@
 
 <!-- we need Binding to connect Model with HTML  -->
 <!-- we need Thymleaf to help to connect-->
-    <h1>Welcome to Student Page</h1>
+<h1>Welcome to Student Page</h1>
 
-    <h2 th:text="${name}"></h2>
-    <h3 th:text="${course}"></h3>
-    <h3 th:text="${subject}"></h3>
-    <h3 th:text="${id}"></h3>
-    <h3 th:text="${numbers}"></h3>
-    <h3 th:text="${numbers.get(0)}"></h3>
-    <h3 th:text="${birthYear}"></h3>
-
-
-    <!-- Concatenation -->
-    <h2 th:text="${'Hello '+name }"></h2>
+<h2 th:text="${name}"></h2>
+<h3 th:text="${course}"></h3>
+<h3 th:text="${subject}"></h3>
+<h3 th:text="${id}"></h3>
+<h3 th:text="${numbers}"></h3>
+<h3 th:text="${numbers.get(0)}"></h3>
+<h3 th:text="${birthYear}"></h3>
 
 
-    <!-- print Student object -->
-
-    <h2 th:text="${student.getFirstName()}"></h2>
-    <h2 th:text="${student.firstName}"></h2>
+<!-- Concatenation -->
+<h2 th:text="${'Hello '+name }"></h2>
 
 
+<!-- print Student object -->
 
-    <!-- Link by Thymleaf-->
-
-    <a th:href="@{https://www.amazon.com}">Amazon</a>
-
-    <a th:href="@{/student/register}">Register</a>
+<h2 th:text="${student.getFirstName()}"></h2>
+<h2 th:text="${student.firstName}"></h2>
 
 
-    <!-- adding parameter to link -->
-    <a th:href="@{/student/welcome(id=3)}">Link2</a>
+<!-- Link by Thymleaf-->
 
-    <a th:href="@{/student/welcome(id=${student.id})}" >Link3</a>
+<a th:href="@{https://www.amazon.com}">Amazon</a>
 
-
-
-    <!--- Iteration -->
-
-    <url>
-        <li th:each="number : ${numbers}" th:text="${number}"></li>
-    </url>
+<a th:href="@{/student/register}">Register</a>
 
 
+<!-- adding parameter to link -->
+<a th:href="@{/student/welcome(id=3)}">Link2</a>
+
+<a th:href="@{/student/welcome(id=${student.id})}">Link3</a>
 
 
+<!--- Iteration -->
 
-    <!-- fragment -->
+<url>
+    <li th:each="number : ${numbers}" th:text="${number}"></li>
+</url>
 
-    <div th:replace="fragments/footer ::foter"></div>
 
+<!-- fragment -->
+
+<div th:replace="fragments/footer ::foter"></div>
 
 
 </body>

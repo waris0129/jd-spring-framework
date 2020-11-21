@@ -17,5 +17,4 @@ public class Mentor {
     private Gender gender;
 
 
-
 }

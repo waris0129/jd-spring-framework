@@ -17,24 +17,24 @@ import java.util.Random;
 public class StudentController {
 
     @GetMapping("/welcome")
-    public String homePage(Model model){
+    public String homePage(Model model) {
 
-        model.addAttribute("name","Waris");
+        model.addAttribute("name", "Waris");
 
-        model.addAttribute("course","Java Developer");
+        model.addAttribute("course", "Java Developer");
 
         String subject = "Collection";
 
-        model.addAttribute("subject",subject);
+        model.addAttribute("subject", subject);
 
         // create some random studentId (0-100) and show it in your url
 
         int studentId = new Random().nextInt(1000);
-        model.addAttribute("id",studentId);
+        model.addAttribute("id", studentId);
 
         // try some collection
 
-        List<Integer>numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
         numbers.add(1);
         numbers.add(2);
         numbers.add(3);
@@ -43,28 +43,26 @@ public class StudentController {
         numbers.add(6);
         numbers.add(7);
         numbers.add(8);
-        model.addAttribute("numbers",numbers);
+        model.addAttribute("numbers", numbers);
 
 
         // print your birthday
 
         var birthYear = LocalDate.now().minusYears(36);
 
-        model.addAttribute("birthYear",birthYear);
-
+        model.addAttribute("birthYear", birthYear);
 
 
         // create Student class object
-        Student student = new Student(1,"Mike","Smith");
-        model.addAttribute("student",student);
-
+        Student student = new Student(1, "Mike", "Smith");
+        model.addAttribute("student", student);
 
 
         return "student/welcome";
     }
 
     @GetMapping("/register")
-    public String homePage2(){
+    public String homePage2() {
 
         return "student/register";
     }
