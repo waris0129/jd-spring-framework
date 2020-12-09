@@ -1,0 +1,140 @@
+
+        SQL Function
+
+        Ram
+        Hard desk
+
+
+        what is relationship between Ram and Hard desk
+
+        ERD : Entity Relationship Diagram or ER Model
+
+
+**************** Index ********************
+            Database Index : indexes are used to quickly locate data without
+            having search every row in database table.
+
+            Important:
+            create index to increase performance issue to quickly retrieve data
+            from db.
+
+        DataStructure: it is based on Ram
+            we can manage
+
+
+        Important : DataStructure
+            B+ Tree
+
+SELECT
+    tablename,
+    indexname,
+    indexdef
+FROM
+    pg_indexes
+WHERE
+        schemaname = 'public'
+ORDER BY
+    tablename,
+    indexname;
+
+
+
+CREATE INDEX  idx_towns_name ON towns(name);
+
+
+
+
+************** Function *****************
+
+    CREATE or REPLACE FUNCTION get_department_count_by_name(dep_name varchar)
+    RETURNS int
+    LANGUAGE plpgsql
+    as
+    $$
+    DECLARE
+    -- variable
+        department_count integer;
+
+    BEGIN
+    -- Logic
+        SELECT count(*)
+        into department_count
+        from employees
+        where department = dep_name;
+
+        return department_count;
+
+    end;
+    $$;
+
+
+
+
+    -- second function
+    CREATE or REPLACE FUNCTION get_department(p_pattern varchar)
+    returns table(
+        employee_name varchar,
+        employee_email varchar
+    )
+    language plpgsql
+    as
+        $$
+        begin
+            return query
+            select first_name,email
+            from employees
+            where department like p_pattern;
+        end;
+        $$;
+
+    SELECT * FROM get_department('%th%');
+
+
+    Drop function get_department(p_pattern varchar);
+
+
+
+ ************** Procedure  *****************
+
+   Function vs Procedure
+        - The most important difference
+        Function: can not manupilate data
+        Procedure: can manupulate data, is able to do UPDATE command
+
+
+CREATE OR REPLACE PROCEDURE update_department(emp_id int)
+language plpgsql
+as
+    $$
+    declare
+    begin
+        update employees set department = 'Toys' where employee_id = emp_id;
+        commit ;
+    end
+    $$;
+
+CALL update_department(1);
+
+SELECT * FROM employees WHERE employee_id = 1;
+
+
+
+ ************** Trigger  *****************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
