@@ -1,0 +1,108 @@
+TOPIC ORM
+
+    ORM: Object Relational Mapping
+
+    ORM FRAMEWORKS
+        - Hibernate
+        - IBatis/mybatis
+        - TopLink
+
+        Hibernate : bridge helps us to convert between Application (EntityObject) and DB
+
+
+        JDBC --> persistence data --> update db --> interacting with DB and Column
+        Hibernate --> persistence of object--> update db and object --> Hiberante is very independence
+
+        JDBC use SQL
+        Hiberante uses HQL
+            advantage of HQL: it is abstract, it is convenience for us to change other database
+                              if one day Company changes to Oracel, SQL, or DB2, we dont need to
+                              change HQL.The HQL can connect with all types of Database.
+
+                              But SQL is for certian database, if you going to change database one day
+                              there might be slight change/update on query in order to adapt new
+                              database.
+
+
+
+        Important difference :
+        JDBC --> manually write join command by sql to work with many tables
+        Hibernate --> annotation OneToOne,OneToMany,ManyToMany to conduct join operation
+
+
+
+        Cascading : if you delete or save one table/object, second tables/object should behave same
+
+
+
+        JPA - JAVA Persistence API
+            It is a standard, it is not tool.
+
+
+
+        Architecture FLOW
+
+        Client ---> Service Layer ---> Repository Leve(DAO) --> DataBase
+
+
+
+
+        @Annotation
+            @Entity
+            @id
+            @Table(name= "tableName")
+            @GenerateValue.AUTO
+                          .INDENTITY    --> Assign id
+                          .SEQUENCE
+                          .TABLE
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+            @Column(name = "studentEmailAddress")
+            @Transient --> non-Persistance
+            @Temporal(TemporalType.DATE)
+                     (TemporalType.TIME)
+                     (TemporalType.TIMESTAMP)
+            @Enumerated(EnumType.STRING) --> change Enum type as String
+
+
+            Inherit table
+            @MappedSuperclass
+
+
+            @MappedSuperclass
+            public class Account
+
+            @Entity
+            public class CreditAccount extends Account
+
+            the CreditAccount table is created in additional with other columns
+            derived from Account class.
+
+
+
+
+        Repository interface:
+                                Repository
+                                CrudRepository
+                                PagingAndSortingRepository
+                                JPARepository
+
+
+        @Repository
+
+        @Repository
+        public interface CarRepository extends JpaRepository<Car,Long> {
+        }
+
+
+
+        inject data before run application
+        @PostConstruct
+        	public void dataInit(){
+
+
+
+
+
+
+
