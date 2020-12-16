@@ -1,5 +1,9 @@
 TOPIC ORM
 
+    JPA : Java Persistence API
+
+    DAO : Data Access Object
+
     ORM: Object Relational Mapping
 
     ORM FRAMEWORKS
@@ -13,7 +17,7 @@ TOPIC ORM
         JDBC --> persistence data --> update db --> interacting with DB and Column
         Hibernate --> persistence of object--> update db and object --> Hiberante is very independence
 
-        JDBC use SQL
+        JDBC uses SQL
         Hiberante uses HQL
             advantage of HQL: it is abstract, it is convenience for us to change other database
                               if one day Company changes to Oracel, SQL, or DB2, we dont need to
@@ -42,7 +46,7 @@ TOPIC ORM
 
         Architecture FLOW
 
-        Client ---> Service Layer ---> Repository Leve(DAO) --> DataBase
+        Client ---> Service Layer ---> Repository Level(DAO) --> DataBase
 
 
 
@@ -96,7 +100,7 @@ TOPIC ORM
 
 
 
-        inject data before run application
+        SD seed Data, inject data before run application
         @PostConstruct
         	public void dataInit(){
 
