@@ -1,6 +1,6 @@
 package com.cinemaapp.entity;
 
-import com.cinemaapp.enums.MovieSate;
+import com.cinemaapp.enums.MovieState;
 import com.cinemaapp.enums.MovieType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,9 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -33,7 +31,7 @@ public class Movie extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private MovieType type;
     @Enumerated(EnumType.STRING)
-    private MovieSate state;
+    private MovieState state;
 
     private BigDecimal price;
 
@@ -43,13 +41,12 @@ public class Movie extends BaseEntity {
             joinColumns = {@JoinColumn(name = "movie_id")},
             inverseJoinColumns = {@JoinColumn(name = "genre_id")}
     )
-    private List<Genre>genres;
+    private List<Genre>genreList;
 
-    public Movie(String name, LocalDate releaseDate, Integer duration, String summary, MovieType type, MovieSate state, BigDecimal price) {
+    public Movie(String name, LocalDate releaseDate, Integer duration, MovieType type, MovieState state, BigDecimal price) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.duration = duration;
-        this.summary = summary;
         this.type = type;
         this.state = state;
         this.price = price;

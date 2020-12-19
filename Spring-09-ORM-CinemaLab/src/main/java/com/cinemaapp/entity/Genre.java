@@ -18,7 +18,7 @@ public class Genre extends BaseEntity{
 
     private String name;
 
-    @ManyToMany(mappedBy = "genres")
+    @ManyToMany(mappedBy = "genreList")
     private List<Movie>movies;
 
 

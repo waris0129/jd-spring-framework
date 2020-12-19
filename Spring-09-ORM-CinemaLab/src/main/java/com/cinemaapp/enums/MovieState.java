@@ -1,5 +1,5 @@
 package com.cinemaapp.enums;
 
-public enum MovieSate {
+public enum MovieState {
     ACTIVE,DRAFT,SUSPENDED;
 }
