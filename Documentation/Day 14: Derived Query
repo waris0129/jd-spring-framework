@@ -1,0 +1,15 @@
+
+    Topic : Derived Query
+
+    by using naming conventions to convert java method into Sql query.
+
+    three parts :
+        introducer, Delimeter, Criteria
+        find         By        LastName
+        distinct
+
+        List<Student> findByLastName(String lastName)
+
+        convert into Sql query:
+        SELECT * FROM TABLE WHERE LASTNAME = lastName;
+
