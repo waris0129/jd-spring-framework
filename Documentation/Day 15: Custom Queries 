@@ -1,0 +1,19 @@
+
+    Topic : Custom Queries
+
+        1) JPQL
+        2) NativeQuery
+
+        1) JPQ: Java Persistence Query
+
+        JPQ is ran based on Entity level, it interacts with JAVA Class and Object
+
+
+
+        @Query Annotation for JPQL
+            Positional vs Named Bind Parameters
+
+                - Positional bind paratmer : ?1, ?2
+
+
+                - Named Bind parameter: name must match --> : and @Param
