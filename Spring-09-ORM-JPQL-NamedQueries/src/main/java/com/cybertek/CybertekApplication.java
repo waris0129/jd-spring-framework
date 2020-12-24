@@ -26,6 +26,11 @@ public class CybertekApplication {
 
 		System.out.println(employeeRepository.getEmployeeByEmail("fmorffew4@a8.net").get());
 
+
+		employeeRepository.updateEmployeeJPQL(1);
+
+		employeeRepository.updateEmployeeNativeQuery(1);
+
 	}
 
 }

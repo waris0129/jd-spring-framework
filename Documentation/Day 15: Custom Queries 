@@ -17,3 +17,17 @@
 
 
                 - Named Bind parameter: name must match --> : and @Param
+
+
+
+        DDL Operation : add following annotation
+        @ Modifying
+        @Transactional
+
+
+        Named Queries:
+            Property file
+                        folder: META-INF
+                        file: jpa-named-queries.properties file
+            Annotation
+            XML
