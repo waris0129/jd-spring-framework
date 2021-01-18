@@ -3,6 +3,7 @@
 
         1) JPQL
         2) NativeQuery
+        3) Name Query --> property, annoation , xml
 
         1) JPQ: Java Persistence Query
 

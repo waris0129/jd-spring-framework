@@ -20,4 +20,12 @@ public interface DepartmentRepository extends JpaRepository<Department, String> 
     // Property
     List<Department> retrieveDepartmentByDivision(String division);
 
+    @Query(nativeQuery = true)
+    List<Department> retrieveDepartmentByDivisionContains(String pattern);
+
+    //NamedQuery
+    List<Department> findOzzyDepartment(String id);
+
+    //NamedNativeQuery
+    int countAllDepartments();
 }

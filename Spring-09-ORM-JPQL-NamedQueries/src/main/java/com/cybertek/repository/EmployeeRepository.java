@@ -110,6 +110,8 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
     // Property
     List<Employee> retrieveEmployeeBySalaryGreaterThan(double salary);
 
+    // Annotation
+
 
 
 }
