@@ -4,33 +4,45 @@ import com.cybertek.entity.Product;
 import com.cybertek.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/products")
 public class ProductController {
 
-    @Autowired
     private ProductService productService;
 
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
-    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-    public @ResponseBody Product getProduct(@PathVariable("id") long id){
+    @GetMapping(value = "/{id}")
+    public Product getProduct(@PathVariable("id") long id){
 
         return productService.getProduct(id);
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public @ResponseBody List<Product> getProducts(){
+    @GetMapping
+    public List<Product> getProducts(){
+
         return productService.getProducts();
     }
 
-    //create product
-    //delete product
-    //update product
+    @PostMapping
+    public  List<Product> createProduct(@RequestBody Product product){
+        return productService.createProduct(product);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public  List<Product> deleteProduct(@PathVariable("id") long id){
+        return productService.delete(id);
+    }
+
+    @PutMapping(value = "/{id}")
+    public  List<Product> updateProduct(@PathVariable("id") long id,@RequestBody Product product){
+        return productService.updateProduct(id, product);
+    }
 
 }
