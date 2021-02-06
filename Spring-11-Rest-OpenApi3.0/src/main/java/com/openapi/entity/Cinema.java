@@ -23,7 +23,7 @@ public class Cinema extends BaseEntity{
     private String name;
     private String sponsoredName;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private Location location;
 
     public Cinema(String name, String sponsored_name) {
