@@ -28,6 +28,8 @@ public class UnitTestingImpl {
 
 
     public int calculateSumUsingDataService_Parameter(){
+
+        int sum = 0;
         return Arrays.stream(dataRepository.findById(2)).sum();
     }
 
